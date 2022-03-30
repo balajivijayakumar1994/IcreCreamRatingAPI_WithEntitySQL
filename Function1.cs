@@ -41,20 +41,20 @@ namespace IcreCreamRatingAPI_WithEntitySQL
 
             if (userResponse.StatusCode == HttpStatusCode.BadRequest)
             {
-                return new BadRequestErrorMessageResult("Enter Valid UserId");
+                return new BadRequestErrorMessageResult("Enter Valid userId.");
             }
             var productAPI = "https://serverlessohapi.azurewebsites.net/api/GetProduct?productId=" + data.productId;
             var productAPIResponse = httpClient.GetAsync(productAPI);
 
             if (productAPIResponse.Result.StatusCode == HttpStatusCode.BadRequest)
             {
-                return new BadRequestErrorMessageResult("Enter Valid Product Id");
+                return new BadRequestErrorMessageResult("Enter Valid product Id carefully.");
             }
 
 
             if (data.rating < 0 || data.rating > 5)
             {
-                return new BadRequestErrorMessageResult("Enter Valid Rating");
+                return new BadRequestErrorMessageResult("Enter Valid Rating between 0 and 5.");
             }
 
 
