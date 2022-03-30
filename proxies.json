@@ -1,0 +1,32 @@
+{
+  "proxies": {
+    "$schema": "http://json.schemastore.org/proxies",
+    "getProduct": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/GetProduct/{productId}"
+      },
+      "backendUri": "https://serverlessohapi.azurewebsites.net/api/GetProduct/{productId}"
+    },
+    "getProducts": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/GetProducts"
+      },
+      "backendUri": "https://serverlessohapi.azurewebsites.net/api/GetProducts"
+    },
+    "getUser": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/GetUser/{userId}"
+      },
+      "backendUri": "https://serverlessohapi.azurewebsites.net/api/GetUsers/{userId}"
+    }
+  }
+}
